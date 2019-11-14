@@ -85,7 +85,7 @@ $(function () {
                 type: 'post',
                 contentType: 'application/json',
                 data:JSON.stringify({username:username ,phone:phone ,password: password}),
-                success: function (data) {
+                success: function (data) { 
                     var result = data;
                     if (result === 1) {
                         alert('Successful!!!');

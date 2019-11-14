@@ -3,6 +3,7 @@ package com.chinatown.entity;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -18,6 +19,7 @@ import java.util.Date;
 @Entity
 @Table(name = "tbl_user")
 @GenericGenerator(name = "user_jpa_uuid",strategy = "uuid")
+@EntityListeners(AuditingEntityListener.class)
 public class CT_User implements Serializable {
 
     @Id
@@ -53,6 +55,10 @@ public class CT_User implements Serializable {
 
     @Column(name = "userImg")
     private String userImg;
+
+    @Column(name = "address")
+    private  String address;
+
 
     public String getId() {
         return id;
@@ -126,6 +132,19 @@ public class CT_User implements Serializable {
         this.userImg = userImg;
     }
 
+    public String getEmail() { return Email; }
+
+    public void setEmail(String email) { Email = email; }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+
     @Override
     public String toString() {
         return "User{" +
@@ -140,4 +159,5 @@ public class CT_User implements Serializable {
                 ", userImg='" + userImg + '\'' +
                 '}';
     }
+
 }

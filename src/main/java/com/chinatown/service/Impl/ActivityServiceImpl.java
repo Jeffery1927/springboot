@@ -2,16 +2,16 @@ package com.chinatown.service.Impl;
 
 import com.chinatown.entity.Activity;
 
+import com.chinatown.entity.Activity_Car;
+import com.chinatown.repository.ActivityCarRepository;
 import com.chinatown.repository.ActivityRepository;
 import com.chinatown.repository.ActivityRepository2;
 import com.chinatown.service.ActivityService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 @Service
@@ -19,6 +19,10 @@ public class ActivityServiceImpl implements ActivityService{
 
     @Resource
     ActivityRepository repository;
+    @Resource
+    ActivityRepository2 repository2;
+    @Resource
+    ActivityCarRepository activityCarRepository;
 
     public List<Activity> getAllActivities() {
         List<Activity> result = (List<Activity>) repository.findAll();
@@ -75,5 +79,13 @@ public class ActivityServiceImpl implements ActivityService{
                 return entity;
             }
         }
+    }
+
+    public String getSponserIdByActivityID(Long id) {
+        return repository2.getSponserIdByActivityID(id);
+    }
+
+    public Activity_Car insertSelective(Activity_Car activityCar) {
+        return activityCarRepository.save(activityCar);
     }
 }

@@ -83,12 +83,11 @@
         </div>
         <p class="show_tip" th:text="${o.need_skill}"></p>
         <input class="product_id" type="hidden" th:value="${o.id}"/>
-        <a class="product_name" th:href="'/selectById.do?id='+${o.id}" th:text="${o.title}" th:title="${o.title}">wsk1103</a><br/>
+        <a class="product_name" th:href="'/selectById.do?id='+${o.id}" th:text="${o.title}" th:title="${o.title}"></a><br/>
         <!--<span class="product_name" th:text="${o.name}" th:value="${o.id}">Big block Lether Bag</span><br/>-->
-        <span class="product_cost" th:text="'Need'+${o.provide}">$350.00</span><br/><br/>
+        <span class="product_cost" th:text="'Need'+${o.provide}"></span><br/><br/>
         <span class="buy product_1" th:value="${o.id}">加入活动</span>
     </figure>
-
 </div>
 <div class="home_page_info">
     <div class="bottom_info">

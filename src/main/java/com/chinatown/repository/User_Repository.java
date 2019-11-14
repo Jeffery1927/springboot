@@ -18,7 +18,7 @@ public interface User_Repository extends JpaRepository<CT_User, String> {
     @Query(value = "select * from tbl_user where phone = :phone ",nativeQuery = true)
     CT_User selectByPhone(@Param("phone") String phone);
 
-    @Query(value = "select * from tbl_user where id = :id",nativeQuery = true)
+    @Query(value = "select * from tbl_user where user_id = :id",nativeQuery = true)
     CT_User selectByPrimaryKey(@Param("id") String id);
 
     @Query(value = "select user_information_id from tbl_user where phone = :phone",nativeQuery = true)
@@ -29,6 +29,5 @@ public interface User_Repository extends JpaRepository<CT_User, String> {
 
     @Query(value = "delete from tbl_user where user_information_id = :id",nativeQuery = true)
     int deleteByUserId(@Param("id") String id);
-
 
 }

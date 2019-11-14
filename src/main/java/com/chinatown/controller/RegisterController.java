@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Controller
+@CrossOrigin(origins = "*")
 @RequestMapping(value = "/chinatown")
 public class RegisterController {
     private static final Logger log = LoggerFactory.getLogger(RegisterController.class);
@@ -88,12 +89,31 @@ public class RegisterController {
         return map;
     }
 
-
-
-
     //check the phone`s code
     private boolean checkCodePhone(String codePhone, HttpServletRequest request) {
         String trueCodePhone = "12251103";
         return codePhone.equals(trueCodePhone);
     }
+
+    private boolean isUserPhoneExists(String phone) {
+        boolean result = false;
+        try {
+            String id = userInformationService.selectIdByPhone(phone);
+            if (id == null) {
+                return result;
+            }
+            CT_User userInformation = userInformationService.selectByPrimaryKey(id);
+
+            if (StringUtils.getInstance().isNullOrEmpty(userInformation)) {
+                return false;
+            }
+            String userPhone = userInformation.getPhone();
+            result = !userPhone.equals("");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return result;
+        }
+        return result;
+    }
+
 }

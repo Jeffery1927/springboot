@@ -18,7 +18,8 @@
             <div th:switch="${activities}" class="container my-5">
                 <p class="my-5">
                     <a href="/chinatown/edit" class="btn btn-primary">
-                        <i class="fas fa-user-plus ml-2"> Add Activity </i></a>
+                        <i class="fas fa-user-plus ml-2"> Add Activity </i>
+                    </a>
                 </p>
                 <div class="col-md-10">
                     <h2 th:case="null">No record found !!</h2>
@@ -29,6 +30,10 @@
                                 <th>Event Title</th>
                                 <th>Address</th>
                                 <th>Provide</th>
+                                <th>need_food</th>
+                                <th>need_skill</th>
+                                <th>start_time</th>
+                                <th>start_date</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
                             </tr>
@@ -38,6 +43,10 @@
                                 <td th:text="${activity.title}"></td>
                                 <td th:text="${activity.address}"></td>
                                 <td th:text="${activity.provide}"></td>
+                                <td th:text="${activity.need_food}"></td>
+                                <td th:text="${activity.need_skill}"></td>
+                                <td th:text="${activity.start_time}"></td>
+                                <td th:text="${activity.start_date}"></td>
                                 <td>
                                     <a th:href="@{/chinatown/edit/id/{id}(id=${activity.id})}"
                                        class="btn btn-primary">

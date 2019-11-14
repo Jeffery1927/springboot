@@ -24,58 +24,63 @@
 <div class="top_content">
     <div class="publish_product_div">
         <div id="accordion">
-            <h3>用户名：<span class="username_span" th:text="${userInformation.username}">123456</span></h3>
+            <h3>Username：<span class="username_span" th:text="${userInformation.username}">&nbsp;</span></h3>
             <div class="info_content">
                 <div class="first_info">
-                    <span>用户名：</span><input type="text" class="userName"/>
-                    <span class="reqiure_enter"> 必须填写此字段</span>
+                    <span>Username：</span><input type="text" class="userName"/>
+                    <span class="reqiure_enter"> This field is required</span>
                 </div>
-                <button class="update_button">确认修改</button>
+                <button class="update_button">Confirm</button>
             </div>
-            <h3>真实姓名：<span class="realname_span" th:text="${userInformation.username}"> &nbsp;</span></h3>
+            <h3>Realname：<span class="realname_span" th:text="${userInformation.username}"> &nbsp;</span></h3>
             <div class="info_content">
                 <div class="first_info">
-                    <span>真实姓名：</span><input type="text" class="realName"/>
-                    <span class="reqiure_enter"> 必须填写此字段</span>
+                    <span>Realname：</span>
+                    <input type="text" class="realName"/>
+                    <span class="reqiure_enter"> This field is required</span>
                 </div>
-                <button class="update_button">确认修改</button>
+                <button class="update_button">Confirm</button>
             </div>
-            <h3>性别：<span class="sex_span" th:text="${userInformation.username}">男</span></h3>
-            <div class="info_content">
-                <div class="first_info sex_info">
-                    <span>性别：</span><input class="gender" type="radio" name="sex_choose" value="1" checked="checked"/>男
-                    <input class="gender" type="radio" name="sex_choose" value="2"/>女
-                </div>
-                <button class="update_button">确认修改</button>
-            </div>
-            <h3>学号：<span class="sno_span" th:text="${userInformation.id}">&nbsp;</span></h3>
+            <h3>Gender：<span class="gender" th:text="${userInformation.gender}">&nbsp;</span></h3>
             <div class="info_content">
                 <div class="first_info">
-                    <span>学号：</span><input type="text" class="sno"/>
-                    <span class="reqiure_enter"> 必须填写此字段</span>
+                    <span>Gender：</span>
+                    <input class="gender" type="text" />
+                    <span class="reqiure_enter"> This field is required</span>
                 </div>
-                <button class="update_button">确认修改</button>
+                <button class="update_button">Confirm</button>
             </div>
-            <h3>宿舍号：<span class="dormitory_span" th:text="${userInformation.username}">&nbsp;</span></h3>
+            <h3>Phone：<span class="phone_span" th:text="${userInformation.phone}">&nbsp;</span></h3>
             <div class="info_content">
                 <div class="first_info">
-                    <span>宿舍号：</span><input type="text" class="dormitory"/>
-                    <span class="reqiure_enter"> 必须填写此字段</span>
+                    <span>Phone：</span>
+                    <input type="text" class="phone"/>
+                    <span class="reqiure_enter"> This field is required</span>
                 </div>
-                <button class="update_button">确认修改</button>
+                <button class="update_button">Confirm</button>
             </div>
-            <h3>Email：<span class="email_span">&nbsp;</span></h3>
+            <h3>Address：<span class="address_span" th:text="${userInformation.address}">&nbsp;</span></h3>
             <div class="info_content">
                 <div class="first_info">
-                    <span>Email：</span><input type="text" class="email"/>
-                    <span class="reqiure_enter"> 必须填写此字段</span>
+                    <span>Address：</span>
+                    <input type="text" class="address"/>
+                    <span class="reqiure_enter"> This field is required</span>
                 </div>
-                <button class="update_button">确认修改</button>
+                <button class="update_button">Confirm</button>
+            </div>
+            <h3>Email：<span class="email_span" th:text="${userInformation.email}">&nbsp;</span></h3>
+            <div class="info_content">
+                <div class="first_info">
+                    <span>Email：</span>
+                    <input type="text" class="email"/>
+                    <span class="reqiure_enter"> This field is required</span>
+                </div>
+                <button class="update_button">Confirm</button>
             </div>
         </div>
     </div>
     <footer>
-        <p>Copyright © 2017.Company name All rights reserved.<a href="/"></a></p>
+        <p>Copyright © 2019.Company name All rights reserved.<a href="/"></a></p>
     </footer>
 </div>
 </body>

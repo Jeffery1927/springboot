@@ -113,18 +113,20 @@ $(function () {
     $('.buy').click(function () {
         var id = $(this).attr('value');
         $.ajax({
-            url:'/insertGoodsCar.do',
-            dataType:'JSON',
-            type:'post',
-            data:{id:id},
+            url:'/chinatown/attendActivity',
+            dataType: 'JSON',
+            type: 'post',
+            contentType: 'application/json',
+            data:JSON.stringify({id:id}),
             success:function (data) {
                 var result = data.result;
                 if (result == '2'){
                     alert('您还未登录，请先登录！！！');
                 } else if (result == '1'){
-                    alert('加入购物车成功');
+                    alert('加入活动成功');
+                    window.location.href = '/chinatown/activities_car';
                 } else if (result == '0'){
-                    alert('加入购物车失败');
+                    alert('加入活动失败');
                 } else {
                     alert('发生了错误，请检测网络');
                 }

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>聚好吃平台</title>
+    <link rel="icon" href="/img/page_icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+</head>
+
+<body>
+<div class="container my-2">
+    <div class="card">
+        <div class="card-body">
+            <div th:switch="${activities_car}" class="container my-5">
+                <div class="col-md-10">
+                    <h2 th:case="null">No record found !!</h2>
+                    <div th:case="*">
+                        <table class="table table-striped table-responsive-md">
+                            <thead>
+                            <tr>
+                                <th>Event Title</th>
+                                <th>Address</th>
+                                <th>Provide</th>
+                                <th>need_food</th>
+                                <th>need_skill</th>
+                                <th>start_time</th>
+                                <th>start_date</th>
+                                <th>Edit</th>
+<!--                                <th>Delete</th>-->
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="activity : ${activities_car}">
+                                <td th:text="${activity.title}"></td>
+                                <td th:text="${activity.address}"></td>
+                                <td th:text="${activity.provide}"></td>
+                                <td th:text="${activity.need_food}"></td>
+                                <td th:text="${activity.need_skill}"></td>
+                                <td th:text="${activity.start_time}"></td>
+                                <td th:text="${activity.start_date}"></td>
+                               <td>
+                                   <a th:href="@{/chinatown/simple/{id}(id=${activity.id})}" class="btn btn-primary">
+                                       <i class="fas fa-user-plus ml-2"> Apply </i>
+                                   </a>
+                               </td>
+<!--                                <td>-->
+<!--                                    <a th:href="@{/chinatown/delete/{id}(id=${activity.id})}"-->
+<!--                                       class="btn btn-primary">-->
+<!--                                        <i class="fas fa-user-times ml-2"></i>-->
+<!--                                    </a>-->
+<!--                                </td>-->
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

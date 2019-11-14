@@ -10,3 +10,19 @@ spring:
       ddl-auto: create
     show-sql: true
 
+  spring:
+    mail:
+      default-encoding: UTF-8
+      host: smtp.gmail.com
+      username: lzxyzq@gmail.com
+      password: Lzxyzq1993
+      port: 587
+      properties:
+        mail:
+          smtp:
+            auth: true
+            starttls:
+              enable: true
+      protocol: smtp
+      test-connection: false
+

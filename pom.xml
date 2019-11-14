@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
@@ -8,6 +9,7 @@
 		<version>2.1.8.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
 	<groupId>com.yq</groupId>
 	<artifactId>chinatown</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
@@ -42,34 +44,6 @@
 			<artifactId>thumbnailator</artifactId>
 			<version>0.4.8</version>
 		</dependency>
-
-		<!--为了 JSP 添加依赖 -->
-<!--				<dependency>-->
-<!--					<groupId>org.springframework.boot</groupId>-->
-<!--					<artifactId>spring-boot-starter-tomcat</artifactId>-->
-<!--					<scope>provided</scope>-->
-<!--				</dependency>-->
-
-<!--		<dependency>-->
-<!--			<groupId>org.apache.tomcat.embed</groupId>-->
-<!--			<artifactId>tomcat-embed-jasper</artifactId>-->
-<!--			<scope>provided</scope>-->
-<!--		</dependency>-->
-
-<!--		&lt;!&ndash; servlet 依赖 &ndash;&gt;-->
-<!--		<dependency>-->
-<!--			<groupId>javax.servlet</groupId>-->
-<!--			<artifactId>javax.servlet-api</artifactId>-->
-<!--			<scope>provided</scope>-->
-<!--		</dependency>-->
-
-<!--		&lt;!&ndash; 添加 JSTL 支持 &ndash;&gt;-->
-<!--		<dependency>-->
-<!--			<groupId>javax.servlet</groupId>-->
-<!--			<artifactId>jstl</artifactId>-->
-<!--		</dependency>-->
-
-		<!--上边四个为了JSP	-->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -113,7 +87,23 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
+		<!--邮件-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-freemarker</artifactId>
+		</dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+
+    </dependencies>
 
 	<build>
 		<plugins>
